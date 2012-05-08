@@ -1,0 +1,21 @@
+﻿@model HelloWebVerifier.Web.Models.ValidationResult
+
+@{
+    ViewBag.Title = "Validate";
+}
+
+<h2>Validation Result</h2>
+<strong>
+	Valid: @Model.Valid
+</strong>
+
+@if(!Model.Valid)
+{
+	<p>
+		@Model.Reason ?? "Unknown reason"
+	</p>
+}
+
+<div>
+	@Html.ActionLink("Return to test list", "Index")
+</div>

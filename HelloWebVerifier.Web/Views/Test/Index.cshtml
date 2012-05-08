@@ -1,0 +1,36 @@
+﻿@model IEnumerable<string>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Test Implementation</h2>
+@using(Html.BeginForm("Validate", "Test", FormMethod.Post))
+{
+	<table>
+		<tr>
+			<td>
+				Service URL:
+			</td>
+			<td>
+				@Html.TextBox("serviceUrl")
+			</td>
+		</tr>
+	
+		<tr>
+			<td>
+				Subtype:
+			</td>
+			<td>
+				@Html.DropDownList("subtype", Model.Select(s => new SelectListItem { Text = s }))
+			</td>
+		</tr>
+
+		<tr>
+			<td colspan="2">
+				<input type="submit" value="Validate" />
+			</td>
+		</tr>
+	</table>
+}
+
